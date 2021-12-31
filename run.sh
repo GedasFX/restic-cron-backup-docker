@@ -147,3 +147,5 @@ done
 
 restic backup
 restic prune
+
+log INFO "Backup done!"
