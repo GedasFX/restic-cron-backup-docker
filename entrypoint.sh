@@ -15,7 +15,7 @@ if [ "$#" -eq 0 ]; then
     echo "Starting backup job with CRON schedule $CRON_SCHEDULE"
 
     env >/etc/environment
-    echo '* * * * * /run.sh' >>/etc/crontabs/root
+    echo "$CRON_SCHEDULE /run.sh" >/etc/crontabs/root
 
     crond -f -l 2 &
     wait ${!}

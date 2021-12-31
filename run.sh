@@ -145,7 +145,4 @@ done
 
 ## Accept CLI
 
-restic backup
-restic prune
-
-log INFO "Backup done!"
+restic backup && restic prune && log INFO "Backup done!"

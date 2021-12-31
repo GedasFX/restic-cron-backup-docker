@@ -57,6 +57,7 @@ services:
       RESTIC_PASSWORD: hunter2
       RESTIC_BACKUP_EXCLUDES: .jar,logs
       RESTIC_PRUNE_RETENTION: --keep-daily 7 --keep-weekly 10000
+    stop_grace_period: 5m # Useful to prevent accidentally killing the container during backup
 
 volumes:
   rclone-config:
