@@ -9,7 +9,7 @@ fi
 bucket_name="$1"
 shift
 
-export RESTIC_REPOSITORY=rclone:config_name:backups/"$bucket_name"
+export RESTIC_REPOSITORY=rclone:config_name:"$bucket_name"
 export RESTIC_PASSWORD=''
 
 exec restic "$@"

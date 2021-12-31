@@ -11,6 +11,6 @@ shift
 
 docker run --rm -it \
             -v rclone-config:/root/.config/rclone \
-            -e RESTIC_REPOSITORY=rclone:config_name:backups/"$bucket_name" \
+            -e RESTIC_REPOSITORY=rclone:config_name:"$bucket_name" \
             -e RESTIC_PASSWORD='' \
         gedasfx/restic-cron-backup "$@"
