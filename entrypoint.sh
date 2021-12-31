@@ -14,7 +14,7 @@ trap shutdown SIGTERM SIGINT
 if [ "$#" -eq 0 ]; then
     echo "Starting backup job with CRON schedule $CRON_SCHEDULE"
 
-    env >>/etc/environment
+    env >/etc/environment
     echo '* * * * * /run.sh' >>/etc/crontabs/root
 
     crond -f -l 2 &
