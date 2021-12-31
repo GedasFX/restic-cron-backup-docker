@@ -15,7 +15,7 @@ docker run --rm -it \
             -v rclone-config:/root/.config/rclone \
             -e RESTIC_REPOSITORY=rclone:config_name:bucket_name \
             -e RESTIC_PASSWORD='' \
-        gedasfx/restic-cron-backup init
+        gedasfx/restic-backup init
 ```
 
 ### Backup mode
@@ -33,7 +33,7 @@ docker run --rm \
             -v my-precious-data:/data:ro
             -e RESTIC_REPOSITORY=rclone:config_name:bucket_name \
             -e RESTIC_PASSWORD='' \
-        gedasfx/restic-cron-backup
+        gedasfx/restic-backup
 ```
 
 Docker Compose:
@@ -48,7 +48,7 @@ services:
       - ./data:/data
 
   service_backups:
-    image: gedasfx/restic-cron-backup
+    image: gedasfx/restic-backup
     volumes:
       - rclone-config:/root/.config/rclone
       - ./data:/data:ro
