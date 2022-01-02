@@ -1,4 +1,4 @@
-FROM restic/restic:0.12.1
+FROM instrumentisto/restic:0.12
 
 RUN apk add --no-cache bash procps
 
